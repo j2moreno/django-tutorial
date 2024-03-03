@@ -14,8 +14,6 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        #questions = Question.objects.filter(pub_date__lte=timezone.now()).annotate(num_choices=Count('choice')) .filter(num_choices__gt=0).order_by("-pub_date")
-
         questions = Question.objects.filter(pub_date__lte=timezone.now()) \
             .annotate(num_choices=Count('choice')) \
             .filter(num_choices__gt=0) \
@@ -43,7 +41,6 @@ def vote(request, question_id):
     try:
         selected_choice = question.choice_set.get(pk=request.POST["choice"])
     except (KeyError, Choice.DoesNotExist):
-        # Redisplay the question voting form.
         return render(
             request,
             "polls/detail.html",
@@ -55,8 +52,4 @@ def vote(request, question_id):
     else:
         selected_choice.votes = F("votes") + 1
         selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
-    # return HttpResponse("You're voting on question %s." % question_id)
