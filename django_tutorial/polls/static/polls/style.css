@@ -1,7 +1,116 @@
-li a {
-    color: green;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
-body {
-    background: white url("images/background.jpeg") no-repeat;
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #000000;
+}
+
+.polls-list {
+    list-style: none;
+    padding: 0;
+}
+
+.polls-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.polls-list li:last-child {
+    border-bottom: none;
+}
+
+.poll-question {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.poll-question:hover {
+    text-decoration: underline;
+}
+
+.choices {
+    margin: 20px 0;
+}
+
+.choice {
+    margin-bottom: 10px;
+}
+
+.vote-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.vote-button:hover {
+    background-color: #0056b3;
+}
+
+.results-link, .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.results-list {
+    list-style: none;
+    padding: 0;
+}
+
+.results-list li {
+    padding: 10px 0;
+}
+
+.home-button {
+    display: inline-block;
+    background-color: #007bff; /* Primary color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.home-button:hover, .home-button:focus {
+    background-color: #0056b3; /* Darker shade for interaction */
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds depth on hover/focus */
+}
+
+/* Adjusting nav and ul styles for better alignment */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Aligns nav items horizontally */
+    align-items: center; /* Center-align items vertically */
+}
+
+nav li {
+    margin-right: 10px; /* Adds some space between navigation items */
+}
+
+nav li:last-child {
+    margin-right: 0;
 }
